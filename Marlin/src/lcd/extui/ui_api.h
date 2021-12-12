@@ -195,7 +195,7 @@ namespace ExtUI {
   #endif
 
   inline void simulateUserClick() {
-    #if ANY(HAS_LCD_MENU, EXTENSIBLE_UI, DWIN_CREALITY_LCD_JYERSUI)
+    #if EITHER(HAS_LCD_MENU, EXTENSIBLE_UI)
       ui.lcd_clicked = true;
     #endif
   }
@@ -234,8 +234,6 @@ namespace ExtUI {
 
   #if M600_PURGE_MORE_RESUMABLE
     void setPauseMenuResponse(PauseMenuResponse);
-    extern PauseMessage pauseModeStatus;
-    PauseMode getPauseMode();
   #endif
 
   #if ENABLED(LIN_ADVANCE)
